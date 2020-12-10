@@ -4,11 +4,11 @@ import {juggler} from '@loopback/repository';
 const config = {
   name: 'conexion',
   connector: 'mssql',
-  url: 'mssql://Fernando2019_SQLLogin_1:5vp9iid2i6@MercaditoADMON.mssql.somee.com/MercaditoADMON',
-  host: 'MercaditoADMON.mssql.somee.com',
+  url: 'mssql://Fernando:Software2021@DESKTOP-15UB8OD/MercaditoADMON',
+  host: 'DESKTOP-15UB8OD',
   port: 1433,
-  user: 'Fernando2019_SQLLogin_1',
-  password: '5vp9iid2i6',
+  user: 'Fernando',
+  password: 'Software2021',
   database: 'MercaditoADMON'
 };
 
