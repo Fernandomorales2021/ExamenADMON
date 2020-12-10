@@ -1,7 +1,7 @@
 import {Entity, model, property} from '@loopback/repository';
 
-@model({settings: {idInjection: false, mssql: {schema: 'dbo', table: 'Categoria'}}})
-export class Categoria extends Entity {
+@model({settings: {idInjection: false, mssql: {schema: 'dbo', table: 'Transacciones'}}})
+export class Transacciones extends Entity {
   @property({
     type: 'number',
     required: true,
@@ -16,17 +16,16 @@ export class Categoria extends Entity {
     type: 'string',
     required: true,
     length: 50,
-    mssql: {columnName: 'Nombre', dataType: 'nvarchar', dataLength: 50, dataPrecision: null, dataScale: null, nullable: 'NO'},
+    mssql: {columnName: 'Concepto', dataType: 'nvarchar', dataLength: 50, dataPrecision: null, dataScale: null, nullable: 'NO'},
   })
-  nombre: string;
+  concepto: string;
 
   @property({
-    type: 'string',
+    type: 'date',
     required: true,
-    length: 50,
-    mssql: {columnName: 'Descripciom', dataType: 'nvarchar', dataLength: 50, dataPrecision: null, dataScale: null, nullable: 'NO'},
+    mssql: {columnName: 'Fecha', dataType: 'date', dataLength: null, dataPrecision: null, dataScale: null, nullable: 'NO'},
   })
-  descripciom: string;
+  fecha: string;
 
   // Define well-known properties here
 
@@ -34,13 +33,13 @@ export class Categoria extends Entity {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   [prop: string]: any;
 
-  constructor(data?: Partial<Categoria>) {
+  constructor(data?: Partial<Transacciones>) {
     super(data);
   }
 }
 
-export interface CategoriaRelations {
+export interface TransaccionesRelations {
   // describe navigational properties here
 }
 
-export type CategoriaWithRelations = Categoria & CategoriaRelations;
+export type TransaccionesWithRelations = Transacciones & TransaccionesRelations;

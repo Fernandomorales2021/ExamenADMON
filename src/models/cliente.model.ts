@@ -14,17 +14,46 @@ export class Cliente extends Entity {
 
   @property({
     type: 'string',
+    required: true,
     length: 50,
-    mssql: {columnName: 'nombre', dataType: 'varchar', dataLength: 50, dataPrecision: null, dataScale: null, nullable: 'YES'},
+    mssql: {columnName: 'Nombre', dataType: 'nvarchar', dataLength: 50, dataPrecision: null, dataScale: null, nullable: 'NO'},
   })
-  nombre?: string;
+  nombre: string;
+
+  @property({
+    type: 'string',
+    required: true,
+    length: 50,
+    mssql: {columnName: 'Direccion', dataType: 'nvarchar', dataLength: 50, dataPrecision: null, dataScale: null, nullable: 'NO'},
+  })
+  direccion: string;
 
   @property({
     type: 'number',
-    precision: 53,
-    mssql: {columnName: 'limiteCredito', dataType: 'float', dataLength: null, dataPrecision: 53, dataScale: null, nullable: 'YES'},
+    required: true,
+    precision: 10,
+    scale: 0,
+    mssql: {columnName: 'Telefono', dataType: 'int', dataLength: null, dataPrecision: 10, dataScale: 0, nullable: 'NO'},
   })
-  limiteCredito?: number;
+  telefono: number;
+
+  @property({
+    type: 'number',
+    required: true,
+    precision: 10,
+    scale: 0,
+    mssql: {columnName: 'CreditoAPB', dataType: 'int', dataLength: null, dataPrecision: 10, dataScale: 0, nullable: 'NO'},
+  })
+  creditoApb: number;
+
+  @property({
+    type: 'number',
+    required: true,
+    precision: 10,
+    scale: 0,
+    mssql: {columnName: 'Saldo', dataType: 'int', dataLength: null, dataPrecision: 10, dataScale: 0, nullable: 'NO'},
+  })
+  saldo: number;
 
   // Define well-known properties here
 

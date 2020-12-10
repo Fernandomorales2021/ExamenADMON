@@ -14,17 +14,44 @@ export class Proveedor extends Entity {
 
   @property({
     type: 'string',
+    required: true,
     length: 50,
-    mssql: {columnName: 'nombre', dataType: 'varchar', dataLength: 50, dataPrecision: null, dataScale: null, nullable: 'YES'},
+    mssql: {columnName: 'Nombre', dataType: 'nvarchar', dataLength: 50, dataPrecision: null, dataScale: null, nullable: 'NO'},
   })
-  nombre?: string;
+  nombre: string;
 
   @property({
     type: 'string',
+    required: true,
     length: 50,
-    mssql: {columnName: 'observaciones', dataType: 'varchar', dataLength: 50, dataPrecision: null, dataScale: null, nullable: 'YES'},
+    mssql: {columnName: 'Empresa', dataType: 'nvarchar', dataLength: 50, dataPrecision: null, dataScale: null, nullable: 'NO'},
   })
-  observaciones?: string;
+  empresa: string;
+
+  @property({
+    type: 'string',
+    required: true,
+    length: 50,
+    mssql: {columnName: 'Tipo', dataType: 'nvarchar', dataLength: 50, dataPrecision: null, dataScale: null, nullable: 'NO'},
+  })
+  tipo: string;
+
+  @property({
+    type: 'number',
+    required: true,
+    precision: 10,
+    scale: 0,
+    mssql: {columnName: 'Telefono', dataType: 'int', dataLength: null, dataPrecision: 10, dataScale: 0, nullable: 'NO'},
+  })
+  telefono: number;
+
+  @property({
+    type: 'string',
+    required: true,
+    length: 50,
+    mssql: {columnName: 'Direccion', dataType: 'nvarchar', dataLength: 50, dataPrecision: null, dataScale: null, nullable: 'NO'},
+  })
+  direccion: string;
 
   // Define well-known properties here
 
